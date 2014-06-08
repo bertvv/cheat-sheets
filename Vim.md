@@ -4,13 +4,12 @@ Warning: this cheat sheet may contain commands that only work for my particular 
 
 ## General
 
-| Key        | Action                  |
-| :---       | :-----                  |
-| `CapsLock` | = Second escape         |
-| `C-r`      | Redo (undo undo)        |
-| `:!CMD`    | Shell command           |
-| `,t`       | Open file with CommandT |
-|            |                         |
+| Key        | Action                               |
+| :---       | :-----                               |
+| `CapsLock` | = Second escape (Custom keyb setting |
+| `C-r`      | Redo (undo undo)                     |
+| `:!CMD`    | Shell command                        |
+| `,t`       | Open file with CommandT              |
 
 ## Movement
 
@@ -27,20 +26,20 @@ Warning: this cheat sheet may contain commands that only work for my particular 
 
 ## Cut/Copy/Paste
 
-| Key                        | Action                                                             |
-| :-----------               | :-----------------------                                           |
-| `d`*movement*              | Cut                                                                |
-| `x`                        | Cut letter                                                         |
-| `y`*movement*              | Copy                                                               |
-| `"ad` `"ay`                | Cut/Copy to/from register 'a' (works  for a-z)                     |
-| `p` `P`                    | Paste after/before cursor                                          |
-| `"ap`                      | Paste from register 'a' (works for a-z)                            |
-| `"*y` `"*p`                | Copy/paste OS clipboard                                            |
-| `:reg "` `:reg 0` `:reg a` | Show contents of default/yank/a register                           |
-| `ciw` `caw`                | Cut word (a = incl space) + insert mode                            |
-| `ci(` `ca(`                | Cut between () (a = including ()). Also works for other delimiters |
-| `J`                        | Join lines (delete newline)                                        |
-| `gU` `gu` `g~` *movement*  | To upper/lower case or toggle                                      |
+| Key                         | Action                                                             |
+| :-----------                | :-----------------------                                           |
+| `d` **movement**            | Cut                                                                |
+| `x`                         | Cut letter                                                         |
+| `y` **movement**            | Copy                                                               |
+| `"ad` `"ay`                 | Cut/Copy to/from register 'a' (works  for a-z)                     |
+| `p` `P`                     | Paste after/before cursor                                          |
+| `"ap`                       | Paste from register 'a' (works for a-z)                            |
+| `"*y` `"*p`                 | Copy/paste OS clipboard                                            |
+| `:reg "` `:reg 0` `:reg a`  | Show contents of default/yank/a register                           |
+| `ciw` `caw`                 | Cut word (a = incl space) + insert mode                            |
+| `ci(` `ca(`                 | Cut between () (a = including ()). Also works for other delimiters |
+| `J`                         | Join lines (delete newline)                                        |
+| `gU` `gu` `g~` **movement** | To upper/lower case or toggle                                      |
 
 ## Split screen
 
