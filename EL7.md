@@ -1,5 +1,7 @@
 # Enterprise Linux 7 (RedHat, CentOS)
 
+Last Modified: 2014-06-08 23:09:40
+
 Command cheat sheet for EL7. For every action, I try to give the 'canonical' command, as recommended by RedHat. That means using `systemd`, NetworkManager, `journald`, etc.
 
 ## Network configuration

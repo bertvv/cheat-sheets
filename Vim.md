@@ -1,5 +1,7 @@
 # Vim Cheat sheet
 
+Last Modified: 2014-06-08 23:05:55
+
 Warning: this cheat sheet may contain commands that only work for my particular setup (installed plugins, custom keyboard shortcuts, etc.). See https://github.com/bertvv/dotfiles for my Vim configuration.
 
 ## General
