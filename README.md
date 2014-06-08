@@ -12,6 +12,30 @@ Some recommendations to build a cheat sheet:
 
 Anyway, I hope you find some inspiration here, or maybe learn something new.
 
+## Generating the PDFs
+
+For convenience, I provide PDF versions of the cheat sheets. If you want to create these yourself (e.g. if you update my cheat sheets, or want to do the same for your own), you need a few tools:
+
+- [GNU make](https://www.gnu.org/software/make/)
+- [Pandoc](http://johnmacfarlane.net/pandoc/)
+- A LaTeX distribution, including LuaLaTeX
+- The DejaVu Sans and DejaVu Sans Mono fonts
+
+If you want to use other fonts, just modify the Makefile to your liking.
+
+To generate all (recently modified) cheat sheet PDFs, just type
+
+```
+make
+```
+
+To generate the PDF for a specific cheat sheet (let's say *NetworkTroubleshooting.md*):
+
+```
+make NetworkTroubleshooting.pdf
+```
+
+This will still work if you add your own Markdown files.
 
 ## TODO, ideas
 
