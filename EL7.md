@@ -9,7 +9,6 @@ Command cheat sheet for EL7. For every action, I try to give the 'canonical' com
 | List interfaces (and IP addresses) | `ip address`, `ip a`   |
 | Route table                        | `ip route`, `ip r`     |
 | DNS servers                        | `cat /etc/resolv.conf` |
-|                                    |                        |
 
 ### NetworkManager
 
@@ -25,7 +24,6 @@ Command cheat sheet for EL7. For every action, I try to give the 'canonical' com
 | List available wireless networks           | `nmcli device wifi list`              |
 | Refresh list of wireless networks          | `nmcli device wifi rescan`            |
 | Connect to wireless network SSID           | `nmcli device wifi connect SSID`      |
-|                                            |                                       |
 
 `connection` and `device` can be abbreviated to `con` and `dev`, respectively.
 
@@ -49,7 +47,6 @@ Command cheat sheet for EL7. For every action, I try to give the 'canonical' com
 | *Kill* SERVICE (all processes) with SIGKILL | `sudo systemctl kill -s SIGKILL SERVICE.service` |
 | Start SERVICE on boot                       | `sudo systemctl enable SERVICE.service`          |
 | Don't start SERVICE on boot                 | `sudo systemctl disable SERVICE.service`         |
-|                                             |                                                  |
 
 ### Resources
 
