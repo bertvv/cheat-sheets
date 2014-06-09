@@ -15,11 +15,13 @@ output := print
 # All markdown files in src/ are considered sources
 sources := $(wildcard $(source)/*.md)
 
-# Target file type is PDF
+# Convert the list of source files (Markdown files in directory src/)
+# into a list of output files (PDFs in directory print/).
 objects := $(patsubst %.md,%.pdf,$(subst $(source),$(output),$(sources)))
 
 all: $(objects)
 
+# Recipe for converting a Markdown file into PDF using Pandoc
 $(output)/%.pdf: $(source)/%.md
 	pandoc --variable mainfont="DejaVu Sans" \
 		--variable monofont="DejaVu Sans Mono" \
