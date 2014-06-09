@@ -18,14 +18,6 @@ sources := $(wildcard $(source)/*.md)
 # Target file type is PDF
 objects := $(patsubst %.md,%.pdf,$(subst $(source),$(output),$(sources)))
 
-.PHONY : test
-
-test:
-	echo $(source)
-	echo $(output)
-	echo $(sources)
-	echo $(objects)
-
 all: $(objects)
 
 $(output)/%.pdf: $(source)/%.md
