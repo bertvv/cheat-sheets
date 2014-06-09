@@ -22,10 +22,10 @@ $(output)/%.pdf: %.md
 		--variable monofont="DejaVu Sans Mono" \
 		--variable fontsize=11pt \
 		--variable geometry:margin=1.5cm \
-		-f markdown \
-		$< \
+		-f markdown  $< \
 		--latex-engine=lualatex \
 		-o $@
 
 clean:
-	rm -f *.pdf
+	rm -f $(output)/*
+
