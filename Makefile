@@ -9,12 +9,15 @@
 # All markdown files, except README.md are considered sources
 sources := $(subst README.md,,$(wildcard *.md))
 
+# Directory containing pdf files
+output := print
+
 # Target file type is PDF
-objects := $(patsubst %.md,%.pdf,$(sources))
+objects := $(patsubst %.md,$(output)/%.pdf,$(sources))
 
 all: $(objects)
 
-%.pdf: %.md
+$(output)/%.pdf: %.md
 	pandoc --variable mainfont="DejaVu Sans" \
 		--variable monofont="DejaVu Sans Mono" \
 		--variable fontsize=11pt \

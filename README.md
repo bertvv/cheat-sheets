@@ -14,7 +14,7 @@ Anyway, I hope you find some inspiration here, or maybe learn something new.
 
 ## Generating the PDFs
 
-For convenience, I provide PDF versions of the cheat sheets. If you want to create these yourself (e.g. if you update my cheat sheets, or want to do the same for your own), you need a few tools:
+For convenience, I provide PDF versions of the cheat sheets in the `print/` directory. If you want to create these yourself (e.g. if you update my cheat sheets, or want to do the same for your own), you need a few tools:
 
 - [GNU make](https://www.gnu.org/software/make/)
 - [Pandoc](http://johnmacfarlane.net/pandoc/)
