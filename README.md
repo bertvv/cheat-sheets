@@ -37,8 +37,3 @@ make NetworkTroubleshooting.pdf
 
 This will still work if you add your own Markdown files.
 
-## TODO, ideas
-
-* Linux Network troubleshooting
-
-

@@ -1,6 +1,6 @@
 # Enterprise Linux 7 (RedHat, CentOS)
 
-Last Modified: 2014-06-08 23:09:40
+Last Modified: 2014-06-09 16:39:22
 
 Command cheat sheet for EL7. For every action, I try to give the 'canonical' command, as recommended by RedHat. That means using `systemd`, NetworkManager, `journald`, etc.
 
@@ -76,13 +76,3 @@ Viewing logs requires root privileges. However, users that are members of the `a
 
 * [Systemd for Administrators, Part XVII: Using the journal](http://0pointer.de/blog/projects/journalctl.html)
 
-# TODO, ideas
-
-* Setting host name
-* Changing keyboard mapping
-* Locale settings
-* Using the firewall (`firewalld`) See [Security Guide](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7-Beta/html/Security_Guide/index.html)
-* [SELinux](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7-Beta/html/SELinux_Users_and_Administrators_Guide/index.html)
-* Managing a network card (e.g. use DHCP, or static IP configuration)
-* [Config files](http://0pointer.de/blog/projects/the-new-configuration-files.html)
-* [Runlevels vs targets](https://wiki.archlinux.org/index.php/systemd#Targets), e.g. `systemctl isolate rescue.target` instead of `telinit 1`; `systemctl set-default -f multi-user.target` to boot into text mode, etc.
