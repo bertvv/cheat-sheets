@@ -6,18 +6,29 @@
 # - LuaLaTeX
 # - DejaVu Sans fonts
 
-# All markdown files, except README.md are considered sources
-sources := $(subst README.md,,$(wildcard *.md))
+# Directory containing source (Markdown) files
+source := src
 
 # Directory containing pdf files
 output := print
 
+# All markdown files in src/ are considered sources
+sources := $(wildcard $(source)/*.md)
+
 # Target file type is PDF
-objects := $(patsubst %.md,$(output)/%.pdf,$(sources))
+objects := $(patsubst %.md,%.pdf,$(subst $(source),$(output),$(sources)))
+
+.PHONY : test
+
+test:
+	echo $(source)
+	echo $(output)
+	echo $(sources)
+	echo $(objects)
 
 all: $(objects)
 
-$(output)/%.pdf: %.md
+$(output)/%.pdf: $(source)/%.md
 	pandoc --variable mainfont="DejaVu Sans" \
 		--variable monofont="DejaVu Sans Mono" \
 		--variable fontsize=11pt \
@@ -25,6 +36,8 @@ $(output)/%.pdf: %.md
 		-f markdown  $< \
 		--latex-engine=lualatex \
 		-o $@
+
+.PHONY : clean
 
 clean:
 	rm -f $(output)/*
