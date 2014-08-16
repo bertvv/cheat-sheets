@@ -1,6 +1,6 @@
 # Enterprise Linux 7 (RedHat, CentOS)
 
-Last Modified: 2014-06-09 16:39:22
+Last Modified: 2014-08-15 14:55:42
 
 Command cheat sheet for EL7. For every action, I try to give the 'canonical' command, as recommended by RedHat. That means using `systemd`, NetworkManager, `journald`, etc.
 
@@ -76,3 +76,31 @@ Viewing logs requires root privileges. However, users that are members of the `a
 
 * [Systemd for Administrators, Part XVII: Using the journal](http://0pointer.de/blog/projects/journalctl.html)
 
+## Configuring the firewall with `firewalld`
+
+
+| Action                      | Command                                                          |
+| :---                        | :---                                                             |
+| Firewall state              | `firewall-cmd --state`                                           |
+| Reload permanent rules      | `firewall-cmd --reload`                                          |
+| Currently enabled features  | `firewall-cmd --list-all-zones`                                  |
+| List supported zones        | `firewall-cmd --get-zones`                                       |
+| List preconfigured services | `firewall-cmd --get-services`                                    |
+| Enabled features in zone    | `firewall-cmd [--permanent] [--zone=ZONE] --list-all`            |
+| Enable a service in zone    | `firewall-cmd [--permanent] [--zone=ZONE] --add-service=http`    |
+| Remove service frome zone   | `firewall-cmd [--permanent] [--zone=ZONE] --remove-service=http` |
+| Enable a port in zone       | `firewall-cmd [--permanent] [--zone=ZONE] --add-port=80/tcp`     |
+| Remove a port from zone     | `firewall-cmd [--permanent] [--zone=ZONE] --remove-port=80/tcp`  |
+| Turn panic mode on          | `firewall-cmd --panic-on`                                        |
+| Turn panic mode off         | `firewall-cmd --panic-off`                                       |
+|                             |                                                                  |
+
+* Configuration is stored in `/etc/firewalld` and `/usr/lib/firewalld`
+* The default zone is `public`, which you don't have to specify on the command line when adding/removing rules
+* Adding permanent rules
+
+
+### Resources
+
+* [Using Firewalls, in *RHEL 7 Security Guide*](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Using_Firewalls.html)
+* [FirewallD, in *Fedora Project Wiki*](https://fedoraproject.org/wiki/FirewallD#Using_firewall-cmd)
