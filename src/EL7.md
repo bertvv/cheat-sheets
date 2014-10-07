@@ -1,6 +1,6 @@
 # Enterprise Linux 7 (RedHat, CentOS)
 
-Last Modified: 2014-08-15 14:55:42
+Last Modified: 2014-10-07 12:07:05
 
 Command cheat sheet for EL7. For every action, I try to give the 'canonical' command, as recommended by RedHat. That means using `systemd`, NetworkManager, `journald`, etc.
 
@@ -78,22 +78,24 @@ Viewing logs requires root privileges. However, users that are members of the `a
 
 ## Configuring the firewall with `firewalld`
 
+The `firewalld-cmd` should run with root privileges, do always use `sudo`.
 
-| Action                      | Command                                                          |
-| :---                        | :---                                                             |
-| Firewall state              | `firewall-cmd --state`                                           |
-| Reload permanent rules      | `firewall-cmd --reload`                                          |
-| Currently enabled features  | `firewall-cmd --list-all-zones`                                  |
-| List supported zones        | `firewall-cmd --get-zones`                                       |
-| List preconfigured services | `firewall-cmd --get-services`                                    |
-| Enabled features in zone    | `firewall-cmd [--permanent] [--zone=ZONE] --list-all`            |
-| Enable a service in zone    | `firewall-cmd [--permanent] [--zone=ZONE] --add-service=http`    |
-| Remove service frome zone   | `firewall-cmd [--permanent] [--zone=ZONE] --remove-service=http` |
-| Enable a port in zone       | `firewall-cmd [--permanent] [--zone=ZONE] --add-port=80/tcp`     |
-| Remove a port from zone     | `firewall-cmd [--permanent] [--zone=ZONE] --remove-port=80/tcp`  |
-| Turn panic mode on          | `firewall-cmd --panic-on`                                        |
-| Turn panic mode off         | `firewall-cmd --panic-off`                                       |
-|                             |                                                                  |
+| Action                           | Command                                                          |
+| :---                             | :---                                                             |
+| Firewall state                   | `firewall-cmd --state`                                           |
+| Reload permanent rules           | `firewall-cmd --reload`                                          |
+| Currently enabled features       | `firewall-cmd --list-all-zones`                                  |
+| List supported zones             | `firewall-cmd --get-zones`                                       |
+| List preconfigured services      | `firewall-cmd --get-services`                                    |
+| Enabled features in current zone | `firewall-cmd --list-all`            |
+| Enabled features in zone         | `firewall-cmd [--permanent] [--zone=ZONE] --list-all`            |
+| Enable a service in zone         | `firewall-cmd [--permanent] [--zone=ZONE] --add-service=http`    |
+| Remove service frome zone        | `firewall-cmd [--permanent] [--zone=ZONE] --remove-service=http` |
+| Enable a port in zone            | `firewall-cmd [--permanent] [--zone=ZONE] --add-port=80/tcp`     |
+| Remove a port from zone          | `firewall-cmd [--permanent] [--zone=ZONE] --remove-port=80/tcp`  |
+| Turn panic mode on               | `firewall-cmd --panic-on`                                        |
+| Turn panic mode off              | `firewall-cmd --panic-off`                                       |
+|                                  |                                                                  |
 
 * Configuration is stored in `/etc/firewalld` and `/usr/lib/firewalld`
 * The default zone is `public`, which you don't have to specify on the command line when adding/removing rules
