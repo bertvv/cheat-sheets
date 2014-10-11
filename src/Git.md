@@ -12,6 +12,24 @@
 
 - [Tag naming conventions](https://stackoverflow.com/questions/2006265/is-there-a-standard-naming-convention-for-git-tags) (Stack Overflow)
 
+## Completely remove a Git submodule
+
+Source: [http://davidwalsh.name/git-remove-submodule](http://davidwalsh.name/git-remove-submodule)
+
+1. Delete section from `.gitmodules`: 3 lines, starting with
+
+    `[submodule "MODULE"]`
+
+2. Stage `.gitmodules`: `git add .gitmodules`
+3. Delete section from `.git/config`: 2 lines, starting with
+
+    `[submodule "MODULE"]`
+
+4. `git rm --cached path/to/submodule`
+5. `rm -rf .git/modules/MODULE`
+6. `git commit -m 'Removed module MODULE'`
+7. `rm -rf path/to/submodule` (removes now untracked submodule files)
+
 ## Extract a subproject with Git Subtree
 
 You have a project `app` where one of the modules, `widget`, would better be kept in a separate Git repository. We'll assume `widget` now resides in a directory immediately under the project root `~/projects/app/widget/`. The `app` project is on Github, at `git@github.com:user/app.git`.
