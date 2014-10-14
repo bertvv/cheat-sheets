@@ -1,16 +1,19 @@
 # Enterprise Linux 7 (RedHat, CentOS)
 
-Last Modified: 2014-10-07 12:07:05
+Last Modified: 2014-10-14 23:07:30
 
 Command cheat sheet for EL7. For every action, I try to give the 'canonical' command, as recommended by RedHat. That means using `systemd`, NetworkManager, `journald`, etc.
 
 ## Network configuration
 
-| Action                             | Command                |
-| :---                               | :---                   |
-| List interfaces (and IP addresses) | `ip address`, `ip a`   |
-| Route table                        | `ip route`, `ip r`     |
-| DNS servers                        | `cat /etc/resolv.conf` |
+| Action                             | Command                                       |
+| :---                               | :---                                          |
+| List interfaces (and IP addresses) | `ip address`, `ip a`                          |
+| Route table                        | `ip route`, `ip r`                            |
+| DNS servers                        | `cat /etc/resolv.conf`                        |
+| Set IP address of an interface*    | `ip address add 192.168.56.1/24 dev vboxnet0` |
+
+(*) This example is actually a workaround for a [bug](https://bugzilla.gnome.org/show_bug.cgi?id=731014) that causes NetworkManager 0.9.9 to manage virtual network interfaces.
 
 ### NetworkManager
 
