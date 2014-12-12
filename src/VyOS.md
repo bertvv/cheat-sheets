@@ -1,6 +1,6 @@
 # VyOS
 
-Last modified: 2014-11-29 21:18:42
+Last modified: 2014-12-12 09:51:31
 
 ## Querying system information
 
@@ -63,10 +63,27 @@ Example with two directly connected networks:
 # set protocols rip redistribute connected
 ```
 
+## Script template
+
+```Bash
+#!/bin/vbash
+source /opt/vyatta/etc/functions/script-template
+
+configure
+
+# Fix for error "INIT: Id "TO" respawning too fast: disabled for 5 minutes"
+delete system console device ttyS0
+
+# Commands here
+
+commit
+save
+```
+
 ## Resources
 
 * [VyOS homepage](http://vyos.net/)
 * [User Guide](http://vyos.net/wiki/User_Guide)
 * [Unofficial Vyatta Wiki](http://wiki.het.net/)
-
+* [Higebu's Git repos](https://github.com/higebu?tab=repositories)
 
