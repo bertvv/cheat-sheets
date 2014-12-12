@@ -1,6 +1,6 @@
 # VyOS
 
-Last modified: 2014-12-12 09:51:31
+Last modified: 2014-12-12 10:21:19
 
 ## Querying system information
 
@@ -27,6 +27,7 @@ vyos@vyos $
 | Action              | Command                                          |
 | :---                | :---                                             |
 | Set host name       | `set system host-name HOSTNAME`                  |
+| Set default gateway | `set system gateway-address 192.168.0.1`         |
 | Set DNS server      | `set system name-server 8.8.8.8`                 |
 | Set DNS forwarding  | `set service dns forwarding listen-on eth1`      |
 |                     | `set service dns forwarding name-server 8.8.8.8` |
@@ -47,11 +48,11 @@ vyos@vyos $
 
 ## Static routing
 
-| Action              | Command                                                                  |
-| :---                | :---                                                                     |
-| Add route           | `set protocols static route 192.168.0.0/24 next-hop 10.0.0.1 distance 1` |
-| Set default gateway | `set protocols static route 0.0.0.0/0 next-hop 10.0.2.2 distance 1`      |
-| Drop traffic        | `set protocols static route 172.16.0.0/12 blackhole distance '254'`      |
+| Action            | Command                                                                  |
+| :---              | :---                                                                     |
+| Add route         | `set protocols static route 192.168.0.0/24 next-hop 10.0.0.1 distance 1` |
+| Set default route | `set protocols static route 0.0.0.0/0 next-hop 10.0.2.2 distance 1`      |
+| Drop traffic      | `set protocols static route 172.16.0.0/12 blackhole distance '254'`      |
 
 ## RIP
 
