@@ -1,6 +1,6 @@
 # Enterprise Linux 7 (RedHat, CentOS)
 
-Last Modified: 2014-10-14 23:07:30
+Last Modified: 2015-01-20 16:12:38
 
 Command cheat sheet for EL7. For every action, I try to give the 'canonical' command, as recommended by RedHat. That means using `systemd`, NetworkManager, `journald`, etc.
 
@@ -32,10 +32,28 @@ Command cheat sheet for EL7. For every action, I try to give the 'canonical' com
 
 `connection` and `device` can be abbreviated to `con` and `dev`, respectively.
 
+### Host name
+
+There are *three* kinds of host names:
+
+- Static: "traditional" host name, stored in `/etc/hostname`
+- Transient: dynamic, set in kernel. Default value is the static host name, can be set by e.g. DHCP or mDNS.
+- Pretty: free form, for presentation to the user. Default value is the static host name.
+
+| Action                 | Command                                         |
+| :---                   | :---                                            |
+| Get hosti names        | `hostnamectl`                                   |
+| Set (all) host names   | `hostnamectl set-hostname HOSTNAME`             |
+| Set specific host name | `hostnamectl set-hostname --static HOSTNAME`    |
+|                        | `hostnamectl set-hostname --transient HOSTNAME` |
+|                        | `hostnamectl set-hostname --pretty HOSTNAME`    |
+|                        |                                                 |
+
 ### Resources
 
 * [RedHat Enterprise Linux 7 Networking Guide](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7-Beta/html/Networking_Guide/index.html)
 * [Fedora Wiki: Networking/CLI](https://fedoraproject.org/wiki/Networking/CLI)
+* [RHEL 7: How to get started with Systemd](http://www.certdepot.net/rhel7-get-started-systemd/), at certdepot.net
 
 
 ## Managing services with `systemctl`
@@ -52,6 +70,21 @@ Command cheat sheet for EL7. For every action, I try to give the 'canonical' com
 | *Kill* SERVICE (all processes) with SIGKILL | `sudo systemctl kill -s SIGKILL SERVICE.service` |
 | Start SERVICE on boot                       | `sudo systemctl enable SERVICE.service`          |
 | Don't start SERVICE on boot                 | `sudo systemctl disable SERVICE.service`         |
+
+## Runlevels
+
+Run with root privileges (`sudo`)
+
+| Action                     | Command                                  |
+| :---                       | :---                                     |
+| Go to single user mode     | `systemctl rescue`                       |
+| Go to multi-user mode      | `systemctl isolate multi-user.target`    |
+| (= old runlevel 3)         | `systemctl isolate runlevel3.target`     |
+| Go to graphical level      | `systemctl isolate graphical.target`     |
+| Get default runlevel       | `systemctl get-default`                  |
+| Set default runlevel       | `systemctl set-default graphical.target` |
+| Shutdown                   | `systemctl poweroff`                     |
+| Reboot, suspend, hibernate | `systemctl STATE`                        |
 
 ### Resources
 
