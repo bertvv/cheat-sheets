@@ -27,6 +27,9 @@ $(output)/%.pdf: $(source)/%.md
 		--variable monofont="DejaVu Sans Mono" \
 		--variable fontsize=11pt \
 		--variable geometry:margin=1.5cm \
+		--variable geometry:a4paper \
+		--table-of-contents \
+		--number-sections \
 		-f markdown  $< \
 		--latex-engine=lualatex \
 		-o $@
