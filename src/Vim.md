@@ -43,6 +43,15 @@ Warning: this cheat sheet may contain commands that only work for my particular 
 | `J`                         | Join lines (delete newline)                                        |
 | `gU` `gu` `g~` **movement** | To upper/lower case or toggle                                      |
 
+## Editing tricks
+
+| Key                         | Action                                                             |
+| :-----------                | :-----------------------                                           |
+| `%s/OLD/NEW/gc`             | Interactive search/replace |
+| `gU` **movement**           | Change to uppercase |
+| `gu` **movement**           | Change to lowercase |
+| `g~` **movement**           | Toggle case |
+
 ## Split screen
 
 | Key           | Action                   |
