@@ -284,3 +284,7 @@ I suggest to leave the default host-only interface as is, and create new interfa
     - Is it e.g. 192.168.56.101 (default host-only network, first IP address assigned by DHCP)
     - Is it e.g. 192.168.56.NN (with 2 <= NN <= 99, if you assigned a fixed IP address)
 5. On your VM, ping the IP of the host system (192.168.56.1) and vice versa.
+
+# Other troubleshooting resources
+
+- Tom Limoncelli, et al., 2009, *a list of dumb (and not so dumb) things to check*, everythingsysadmin.com, Retrieved on 2015-06-15 from [http://everythingsysadmin.com/dumb-things-to-check.html](http://everythingsysadmin.com/dumb-things-to-check.html)
