@@ -10,12 +10,20 @@ Last modified: 2014-12-12 10:21:19
 | Routing            | `show ip route`                |
 | Show configuration | `show`                         |
 | Show log           | `monitor log`, `show log tail` |
+| Show IP traffic    | `monitor interfaces`           |
+
+## CLI Modes
+
+* operational mode (prompt `$`): view system status
+* configuration mode (prompt `#`): modify system configuration
+
+In configuration mode, you can execute "operational" commands by preceding them with `run`.
 
 ## Basic configuration
 
 Workflow:
 
-```Shell
+```
 vyos@vyos $ configure
 vyos@vyos # [configuration commands]
 vyos@vyos # commit
@@ -58,13 +66,27 @@ vyos@vyos $
 
 Example with two directly connected networks:
 
-```Shell
+```
 # set protocols rip network 192.168.0.0/24
 # set protocols rip network 192.168.1.0/24
 # set protocols rip redistribute connected
 ```
 
+## Network Address Translation (NAT)
+
+The following example adds a NAT rule with id 100 for a router with its WAN port on `eth0`. All IP addresses on the internal network 192.168.0.0/24 are translated into the router's IP address on `eth0`.
+
+```
+# set nat source rule 100 outbound-interface 'eth0'
+# set nat source rule 100 source address '192.168.0.0/24'
+# set nat source rule 100 translation address 'masquerade'
+```
+
+If you have multiple networks on the "inside", add a separate rule with a different id (e.g. 200).
+
 ## Script template
+
+Use the following as a template for a configuration script:
 
 ```Bash
 #!/bin/vbash
