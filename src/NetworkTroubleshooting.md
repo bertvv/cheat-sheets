@@ -18,6 +18,7 @@ abstract: A checklist for troubleshooting a network service running on RHEL/Cent
     - `sudo systemctl status SERVICE.service`
         - `sudo systemctl start SERVICE.service`
         - `sudo systemctl enable SERVICE.service`
+    - `sudo ss -tlnp`
     - `sudo firewall-cmd --list-all`
         - `sudo firewall-cmd --add-service=SERVICE --permanent`
         - `sudo firewall-cmd --add-port=PORT/tcp --permanent`
@@ -170,23 +171,23 @@ Does the firewall allow traffic on the service? `sudo firewall-cmd --list-all`.
 
 ```ShellSession
 $ sudo firewall-cmd --list-all
-[sudo] password for USER: 
+[sudo] password for USER:
 public (default, active)
   interfaces: enp0s3 enp0s8
-  sources: 
+  sources:
   services: dhcpv6-client mdns samba-client ssh http https
   ports:
   masquerade: no
-  forward-ports: 
-  icmp-blocks: 
-  rich rules: 
+  forward-ports:
+  icmp-blocks:
+  rich rules:
 ```
 
 Check the output for the following items:
 
 - The network interface that the service listens on is listed
 - The service name is listed.
-    - The value should be one listed by `firewall-cmd --get-services`. 
+    - The value should be one listed by `firewall-cmd --get-services`.
     - Remark that the service name for `firewalld` is *not necessarily* equal to the service name for `systemd`. E.g. BIND is called `named.service` by `systemd`, while it is referred to as `dns` by `firewalld`.
 - If the service name is not present, the port numbers used by the service should be listed (e.g. when using a non-standard port, or a service not known by `firewalld`)
 
@@ -217,7 +218,7 @@ Check the configuration file, somewhere in `/etc/`, e.g. `/etc/httpd/httpd.conf`
 You can start checking availability on the loopback interface, but it is important to repeat this from another host. The loopback interface is not firewalled, while physical network interfaces are.
 
 - Do a port scan from another host on the lan, e.g.
-    - `sudo nmap -sS -p 80,443 HOST` (perform a TCP SYN scan on port 80 and 443) 
+    - `sudo nmap -sS -p 80,443 HOST` (perform a TCP SYN scan on port 80 and 443)
 - Use a test tool or client software to check availability of the service, e.g.
     - `wget http://HOST/`, `wget https://HOST/`
     - `curl http://HOST/`, `curl https://HOST/`
