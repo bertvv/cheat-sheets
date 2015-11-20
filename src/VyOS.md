@@ -37,8 +37,6 @@ vyos@vyos $
 | Set host name       | `set system host-name HOSTNAME`                  |
 | Set default gateway | `set system gateway-address 192.168.0.1`         |
 | Set DNS server      | `set system name-server 8.8.8.8`                 |
-| Set DNS forwarding  | `set service dns forwarding listen-on eth1`      |
-|                     | `set service dns forwarding name-server 8.8.8.8` |
 | Turn on SSH access  | `set service ssh listen-address 0.0.0.0`         |
 | Keyboard layout[^1] | `sudo dpkg-reconfigure keyboard-configuration`   |
 | Set time zone       | `set system time-zone [TAB]`                     |
@@ -83,6 +81,36 @@ The following example adds a NAT rule with id 100 for a router with its WAN port
 ```
 
 If you have multiple networks on the "inside", add a separate rule with a different id (e.g. 200).
+
+## DNS forwarding
+
+Use DNS forwarding if you want your router to function as a DNS server for the local network. There are several options, the easiest being 'forward all traffic to the system DNS server(s)' (defined with `set system name-server`):
+
+```
+# set service dns forwarding system
+```
+
+Manually setting a DNS server for forwarding:
+
+```
+# set service dns forwarding name-server 8.8.8.8
+# set service dns forwarding name-server 8.8.4.4
+```
+
+Setting a forwarding DNS server for a specific domain:
+
+```
+# set service dns forwarding domain example.com server 192.0.2.1
+```
+
+Example: router with two interfaces `eth0` (WAN link) and `eth1` (LAN). A DNS server for the local domain (example.com) is at 192.0.2.1, other DNS requests are forwarded to Google's DNS servers.
+
+```
+# set service dns forwarding domain example.com server 192.0.2.1
+# set service dns forwarding name-server 8.8.8.8
+# set service dns forwarding name-server 8.8.4.4
+# set service dns forwarding listen-on 'eth1'
+```
 
 ## Script template
 
