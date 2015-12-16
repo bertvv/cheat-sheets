@@ -1,17 +1,15 @@
 # Vim Cheat sheet
 
-Last Modified: 2014-06-08 23:05:55
-
 Warning: this cheat sheet may contain commands that only work for my particular setup (installed plugins, custom keyboard shortcuts, etc.). See https://github.com/bertvv/dotfiles for my Vim configuration.
 
 ## General
 
-| Key        | Action                               |
-| :---       | :-----                               |
-| `CapsLock` | = Second escape (Custom keyb setting |
-| `C-r`      | Redo (undo undo)                     |
-| `:!CMD`    | Shell command                        |
-| `,t`       | Open file with CommandT              |
+| Key        | Action                                |
+| :---       | :-----                                |
+| `CapsLock` | = Second escape (Custom keyb setting) |
+| `C-r`      | Redo (undo undo)                      |
+| `:!CMD`    | Shell command                         |
+| `,t`       | Open file with CommandT               |
 
 ## Movement
 
@@ -45,12 +43,23 @@ Warning: this cheat sheet may contain commands that only work for my particular 
 
 ## Editing tricks
 
-| Key                         | Action                                                             |
-| :-----------                | :-----------------------                                           |
-| `%s/OLD/NEW/gc`             | Interactive search/replace |
-| `gU` **movement**           | Change to uppercase |
-| `gu` **movement**           | Change to lowercase |
-| `g~` **movement**           | Toggle case |
+| Key               | Action                                      |
+| :-----------      | :-----------------------                    |
+| `%s/OLD/NEW/gc`   | Interactive search/replace                  |
+| `%g/PATTERN/d`    | Delete lines matching PATTERN               |
+| `gU` **movement** | Change to uppercase                         |
+| `gu` **movement** | Change to lowercase                         |
+| `g~` **movement** | Toggle case                                 |
+| `C-a` `C-x`       | Increment/decrement a number (command mode) |
+| `C-n` `C-p`       | Next/previous word completion               |
+| `C-xk`            | Dictionary completion (set dictionary)      |
+
+Dictionary completion works only when the dictionary is set, e.g.
+
+```
+:set dictionary=/usr/share/dict/words
+:set dictionary=/usr/share/myspell/nl_BE.dic
+```
 
 ## Split screen
 
@@ -91,3 +100,15 @@ Warning: this cheat sheet may contain commands that only work for my particular 
 | `F5`         | Insert environment (interactive) |
 | `<Shift>-F5` | Change environment               |
 | `F9`         | Autocomplete citation            |
+
+Folding for specific parts of the document:
+
+```LaTeX
+%% <<< Comment
+Some text or \markup.
+%% >>>
+```
+
+## Vim resources
+
+* Vim tips and tricks: <https://www.cs.oberlin.edu/~kuperman/help/vim/home.html>
