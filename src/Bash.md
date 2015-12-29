@@ -6,6 +6,15 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
 
 - Always check for syntax errors and use ShellCheck. Integrate this in your text editor (e.g. Syntastic plugin in Vim)
 - The principles of Clean Code apply to Bash as well
+- Always use long parameter notation when available
+
+    ```Bash
+    # Avoid:
+    rm -rf "${dir}"
+
+    # Good:
+    rm --recursive --force "${dir}"
+    ```
 
 ## Variables
 

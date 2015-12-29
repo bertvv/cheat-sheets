@@ -91,9 +91,9 @@ Run with root privileges (`sudo`)
 * [RedhHat 7 System Administrator's Guide](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7-Beta/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Services.html)
 * [Systemd for Administrators, Part IV: Killing Services](http://0pointer.de/blog/projects/systemd-for-admins-4.html)
 
-## Perusing system logs with `journalctl`
+## Perusing system logs
 
-Viewing logs requires root privileges. However, users that are members of the `adm` group get access as well. So, add your user to the `adm` group to make viewing logs easier.
+On Linux distros based on systemd, logs can be viewed using the `journalctl` command. This requires root privileges. However, users that are members of the `adm` group get access as well. So, add your user to the `adm` group to make viewing logs easier.
 
 | Action                               | Command                                                       |
 | :---                                 | :---                                                          |
@@ -107,6 +107,15 @@ Viewing logs requires root privileges. However, users that are members of the `a
 | Show only log of SERVICE             | `journalctl -u SERVICE`                                       |
 | Match executable, e.g. `dhclient`    | `journalctl /usr/sbin/dhclient`                               |
 | Match device node, e.g. `/dev/sda`   | `journalctl /dev/sda`                                         |
+
+### "Traditional" logs
+
+Traditionally, logs are text files in `/var/log`. Some services still write their logs to these text files and not to journald.
+
+| Action                                      | Command                 |
+| :---                                        | :---                    |
+| Live view of log FILE                       | `tail -f /var/log/FILE` |
+| Colorized live view of boot/kernel messages | `dmesg -wH`             |
 
 ### Resources
 
