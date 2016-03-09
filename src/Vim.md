@@ -112,3 +112,4 @@ Some text or \markup.
 ## Vim resources
 
 * Vim tips and tricks: <https://www.cs.oberlin.edu/~kuperman/help/vim/home.html>
+* Movements: <https://github.com/LevelbossMike/vim_shortcut_wallpaper>
