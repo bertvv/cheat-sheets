@@ -48,8 +48,8 @@ This cheat sheet gives an overview of the most common statistics functions for s
 | Function              | R                | Spreadsheet (EN)        | Spreadsheet (NL)         |
 | :--                   | :--              | :--                     | :--                      |
 | *z*-transformation    | `z <- (x - m)/s` | `=STANDARDIZE(x, m, s)` | `=NORMALISEREN(x, m, s)` |
-| `P(Z < z)`            | `dnorm(z)`       | `=NORMSDIST(z)`         | `=STAND.NORM.VERD(z)`    |
-| `P(X < x)`            | `dnorm(x, m, s)` | `=NORMDIST(x, m, s)`    | `=NORM.VERD(x, m, s)`    |
+| `P(Z < z)`            | `pnorm(z)`       | `=NORMSDIST(z)`         | `=STAND.NORM.VERD(z)`    |
+| `P(X < x)`            | `pnorm(x, m, s)` | `=NORMDIST(x, m, s)`    | `=NORM.VERD(x, m, s)`    |
 | `z` so `P(Z < z) = p` | `qnorm(p)`       | `=NORM.S.INV(p)`        | `=NORM.S.INV(p)`         |
 | `x` so `P(X < x) = p` | `qnorm(p, m, s)` | `=NORMINV(p, m, s)`     | `=NORM.INV.N(p, m, s)`   |
 
