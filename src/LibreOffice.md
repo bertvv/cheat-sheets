@@ -7,6 +7,7 @@ LibreOffice's default options are not always what I want, and custom settings (u
 MS Office documents that use the Calibri and Cambria fonts look horrible in LibreOffice.
 
 1. Install fonts Carlito and Caladea
+
     ```ShellSession
     $ dnf install google-crosextra-caladea-fonts.noarch \
         google-crosextra-carlito-fonts.noarch
