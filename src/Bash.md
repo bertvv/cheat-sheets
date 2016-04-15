@@ -81,3 +81,6 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 - bash(1) man page, <http://linux.die.net/man/1/bash>
 - The Advanced Bash Scripting Guide (ABS) <http://www.tldp.org/LDP/abs/html/>
 - Defensive Bash Programming, <http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming>
+- Aaron Maxwell, *Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)*. <http://redsymbol.net/articles/unofficial-bash-strict-mode/>
+- Yoann Bentz, Good practices for writing shell scripts <http://www.yoone.eu/articles/2-good-practices-for-writing-shell-scripts.html>
+- Paul Armstrong, Shell Style Guide <https://google.github.io/styleguide/shell.xml>
