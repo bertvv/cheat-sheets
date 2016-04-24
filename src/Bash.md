@@ -69,6 +69,19 @@ Bash can be hard to read and interpret. Using functions can greatly improve read
 - [Don't mix levels of abstraction](http://sivalabs.in/clean-code-dont-mix-different-levels-of-abstractions/)
 - Describe the usage of each function: number of arguments, return value, output
 
+## Cleanup code
+
+An idiom for tasks that need to be done before the script ends (e.g. removing temporary files, etc.).
+
+```Bash
+function finish {
+  # Your cleanup code here
+}
+trap finish EXIT
+```
+
+Source: Aaron Maxwell, [How "Exit Traps" can make your Bash scripts way more robust and reliable](http://redsymbol.net/articles/bash-exit-traps/).
+
 ## Shell script template
 
 An annotated template for Bash shell scripts:
