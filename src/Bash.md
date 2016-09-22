@@ -90,10 +90,28 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 
 ## Resources
 
-- Bash Reference Manual, <https://www.gnu.org/software/bash/manual/bashref.html>
-- bash(1) man page, <http://linux.die.net/man/1/bash>
-- The Advanced Bash Scripting Guide (ABS) <http://www.tldp.org/LDP/abs/html/>
-- Defensive Bash Programming, <http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming>
-- Aaron Maxwell, *Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)*. <http://redsymbol.net/articles/unofficial-bash-strict-mode/>
-- Yoann Bentz, Good practices for writing shell scripts <http://www.yoone.eu/articles/2-good-practices-for-writing-shell-scripts.html>
-- Paul Armstrong, Shell Style Guide <https://google.github.io/styleguide/shell.xml>
+- Free Software Foundation (2014). Bash Reference Manual, <https://www.gnu.org/software/bash/manual/bashref.html>
+- Brian Fox and Chet Ramey (2009). bash(1) man page, <http://linux.die.net/man/1/bash>
+- Mendel Cooper (2014). The Advanced Bash Scripting Guide (ABS) <http://www.tldp.org/LDP/abs/html/>
+- Defensive Bash Programming (2012), <http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming>
+- Aaron Maxwell (2014), *Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)*. <http://redsymbol.net/articles/unofficial-bash-strict-mode/>
+- Yoann Bentz (2016), Good practices for writing shell scripts <http://www.yoone.eu/articles/2-good-practices-for-writing-shell-scripts.html>
+- Paul Armstrong (s.d.), Shell Style Guide <https://google.github.io/styleguide/shell.xml>
+- Pádraig Brady (2008), Common Shell Script Mistakes <http://www.pixelbeat.org/programming/shell_script_mistakes.html>
+- Avery Pennarun (2011). Insufficiently known POSIX shell features <http://apenwarr.ca/log/?m=201102#28>
+- BashFAQ <http://mywiki.wooledge.org/BashFAQ>
+- Simon Sheppard (s.d.). Bash Keyboard Shortcuts. <http://ss64.com/bash/syntax-keyboard.html>
+
+- M.Tim Jones (2011) Evolution of shells in Linux: From Bourne to Bash and beyond. <https://www.ibm.com/developerworks/library/l-linux-shells/>
+- Donny Berkholz (2011) Bash shell-scripting libraries. <https://dberkholz.com/2011/04/07/bash-shell-scripting-libraries/>
+### Templates
+
+- bash-script-template <https://github.com/ralish/bash-script-template>
+- Bash3 Boilerplate <http://bash3boilerplate.sh/>
+
+### Portable shell scripts
+
+- https://wiki.ubuntu.com/DashAsBinSh
+- http://pubs.opengroup.org/onlinepubs/009695399/utilities/contents.html
+- http://sites.harvard.edu/~lib113/reference/unix/portable_scripting.html
+- https://www.gnu.org/software/autoconf/manual/autoconf.html#Portable-Shell
