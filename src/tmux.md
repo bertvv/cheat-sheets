@@ -25,16 +25,19 @@ bind = split-window -h
 
 Key bindings here may not be standard, but depend on the configuration above. Precede every key with the prefix `C-a`.
 
-| Task                | Key        |
-| :---                | :---       |
-| New window          | `c`        |
-| Go to window        | number     |
-| New horizontal pane | `-`        |
-| New vertical pane   | `=`        |
-| Go to other pane    | arrow keys |
-| Toggle full screen  | `z`        |
-| Detach              | `d`        |
-| Reload config       | `r`        |
+| Task                | Key             |
+| :---                | :---            |
+| New window          | `c`             |
+| Go to window        | number          |
+| New horizontal pane | `-`             |
+| New vertical pane   | `=`             |
+| Go to other pane    | arrow keys      |
+| Toggle full screen  | `z`             |
+| Scroll up/down (*)  | `PgUp` / `PgDn` |
+| Detach              | `d`             |
+| Reload config       | `r`             |
+
+(*) Exit scroll mode with `C-c`
 
 ## Command line options
 
