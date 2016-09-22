@@ -53,6 +53,7 @@ Warning: this cheat sheet may contain commands that only work for my particular 
 | `C-a` `C-x`       | Increment/decrement a number (command mode) |
 | `C-n` `C-p`       | Next/previous word completion               |
 | `C-xk`            | Dictionary completion (set dictionary)      |
+| `C-t` `C-d`       | Indent/unindent (insert mode)               |
 
 Dictionary completion works only when the dictionary is set, e.g.
 
