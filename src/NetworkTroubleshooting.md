@@ -277,14 +277,14 @@ I suggest to leave the default host-only interface as is, and create new interfa
     - Does the host system have an IP address in the form 192.168.NNN.1?
     - Is the DHCP server activated and configured consistently with the IP address of the host system?
 2. Check whether the host system actually has the expected IP address
-3. Check the VM network adapters (VM Settings > Network)
+3. During the Link Layer phase, check the VM network adapters (VM Settings > Network)
     - Is the adapter enabled?
     - Is the cable connected (hidden setting under "advanced")
     - Is it attached to the correct host-only network?
-4. In the VM, check the IP address of the adapter connected to the host-only network
+4. During the Network Layer phase, in the VM, check the IP address of the adapter connected to the host-only network
     - Is it e.g. 192.168.56.101 (default host-only network, first IP address assigned by DHCP)
     - Is it e.g. 192.168.56.NN (with 2 <= NN <= 99, if you assigned a fixed IP address)
-5. On your VM, ping the IP of the host system (192.168.56.1) and vice versa.
+5. Also during the Network Layer phase, ping the VM from your host system and vice versa. Remark that pinging the host system from the VM may not always work, e.g. if the firewall on the host system is configured to block ICMP traffic.
 
 # Other troubleshooting resources
 
