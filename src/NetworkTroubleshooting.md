@@ -164,6 +164,7 @@ In the transport layer, we'll check whether the network service is actually runn
 
 - What port is the service using? `sudo ss -tlnp` (list TCP (`-t`) server (`-l`) port numbers (`-n`) with the process behind them (`-p`). The `-p` option requires root, hence the `sudo`)
     - The expected output depends on the service and on how you configured it. The httpd service usually listens on port 80 (HTTP) or 443 (HTTPS), but the port number may have been set to a non-standard. Check `/etc/services` for standard port numbers for well-known network services.
+    - Is the service listening on external interfaces? Often, the default configuration of a network service only listens on the loopback interface.
 
 ## Firewall setting
 
