@@ -1,45 +1,54 @@
 # Vim Cheat sheet
 
-Warning: this cheat sheet may contain commands that only work for my particular setup (installed plugins, custom keyboard shortcuts, etc.). See https://github.com/bertvv/dotfiles for my Vim configuration.
+Warning: this cheat sheet may contain commands that only work for my particular setup (installed plugins, custom keyboard shortcuts, etc.). See <https://github.com/bertvv/dotfiles> for my Vim configuration.
+
+Commands work in normal mode, unless specified explicitly.
 
 ## General
 
-| Key        | Action                                |
-| :---       | :-----                                |
-| `CapsLock` | = Second escape (Custom keyb setting) |
-| `C-r`      | Redo (undo undo)                      |
-| `:!CMD`    | Shell command                         |
-| `,t`       | Open file with CommandT               |
+| Key        | Action                                                                        |
+| :---       | :-----                                                                        |
+| `CapsLock` | = Second escape (Custom keyb setting)                                         |
+| `C-r`      | Redo (undo undo)                                                              |
+| `:!CMD`    | Shell command                                                                 |
+| `,t`       | Open file with CommandT                                                       |
+| `C-o`      | (in insert mode) go to normal mode for one commnand and return to insert mode |
 
 ## Movement
 
-| Key       | Action                                                                             |
-| :---      | :---                                                                               |
-| `0` `$`   | Begin/end of line                                                                  |
-| `w` `W`   | start of next word (`W` ignores punctuation)                                       |
-| `e` `E`   | end of next word (`E` ignores punctuation)                                         |
-| `b` `B`   | backwards by word (`B` ignores punctuation)                                        |
-| `(` `)`   | begin of previous/next sentence                                                    |
-| `{` `}`   | paragraph backward/forward                                                         |
-| `[[` `]]` | section backward/forward                                                           |
-| `a(` `i(` | select everything inside (), a = including (). Also works with `[` `{` `<` `"` `'` |
+| Key         | Action                                             |
+| :---        | :---                                               |
+| `0` `$`     | Begin/end of line                                  |
+| `w` `W`     | start of next word (`W` ignores punctuation)       |
+| `e` `E`     | end of next word (`E` ignores punctuation)         |
+| `b` `B`     | backwards by word (`B` ignores punctuation)        |
+| `(` `)`     | begin of previous/next sentence                    |
+| `{` `}`     | paragraph backward/forward                         |
+| `[[` `]]`   | section backward/forward                           |
+| `a(` `i(`   | select everything inside (), a = including (). †   |
+| `C-o` `C-i` | move to previous/next editing positions (jumplist) |
+
+† Also works with `[` `{` `<` `"` `'`
 
 ## Cut/Copy/Paste
 
-| Key                         | Action                                                             |
-| :-----------                | :-----------------------                                           |
-| `d` **movement**            | Cut                                                                |
-| `x`                         | Cut letter                                                         |
-| `y` **movement**            | Copy                                                               |
-| `"ad` `"ay`                 | Cut/Copy to/from register 'a' (works  for a-z)                     |
-| `p` `P`                     | Paste after/before cursor                                          |
-| `"ap`                       | Paste from register 'a' (works for a-z)                            |
-| `"*y` `"*p`                 | Copy/paste OS clipboard                                            |
-| `:reg "` `:reg 0` `:reg a`  | Show contents of default/yank/a register                           |
-| `ciw` `caw`                 | Cut word (a = incl space) + insert mode                            |
-| `ci(` `ca(`                 | Cut between () (a = including ()). Also works for other delimiters |
-| `J`                         | Join lines (delete newline)                                        |
-| `gU` `gu` `g~` **movement** | To upper/lower case or toggle                                      |
+| Key                         | Action                                         |
+| :-----------                | :-----------------------                       |
+| `d` **movement**            | Cut                                            |
+| `x`                         | Cut letter                                     |
+| `y` **movement**            | Copy                                           |
+| `"ad` `"ay`                 | Cut/Copy to/from register 'a' (works  for a-z) |
+| `p` `P`                     | Paste after/before cursor                      |
+| `"ap`                       | Paste from register 'a' (works for a-z)        |
+| `"*y` `"*p`                 | Copy/paste OS clipboard                        |
+| `:reg "` `:reg 0` `:reg a`  | Show contents of default/yank/a register       |
+| `ciw` `caw`                 | Cut word (a = incl space) + insert mode        |
+| `ci(` `ca(`                 | Cut between () (a = including ()). †           |
+| `J`                         | Join lines (delete newline)                    |
+| `gU` `gu` `g~` **movement** | To upper/lower case or toggle                  |
+
+† This also works for other delimiters, e.g. `"`, `{`, `<`, etc.
+
 
 ## Editing tricks
 
