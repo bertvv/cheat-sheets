@@ -15,23 +15,6 @@ Command cheat sheet for EL7. For every action, I try to give the 'canonical' com
 
 (*) This example is actually a workaround for a [bug](https://bugzilla.gnome.org/show_bug.cgi?id=731014) that causes NetworkManager 0.9.9 to manage virtual network interfaces.
 
-### NetworkManager
-
-| Action                                     | Command                               |
-| :---                                       | :---                                  |
-| Show available network connection profiles | `nmcli connection show`               |
-| Show active network connection profiles    | `nmcli connection show active`        |
-| Show network device status                 | `nmcli device status`                 |
-| Connect to profile CONNECTION              | `nmcli connection up id CONNECTION`   |
-| Disconnect profile CONNECTION              | `nmcli connection down id CONNECTION` |
-| Query Wifi status                          | `nmcli radio wifi`                    |
-| Turn Wifi on/off                           | `nmcli radio wifi {on,off}`           |
-| List available wireless networks           | `nmcli device wifi list`              |
-| Refresh list of wireless networks          | `nmcli device wifi rescan`            |
-| Connect to wireless network SSID           | `nmcli device wifi connect SSID`      |
-
-`connection` and `device` can be abbreviated to `con` and `dev`, respectively.
-
 ### Host name
 
 There are *three* kinds of host names:

@@ -119,6 +119,12 @@ Some text or \markup.
 %% >>>
 ```
 
+## Tabular
+
+| Key              | Action                                             |
+| :---             | :---                                               |
+| `:Tabularize /&` | Align table on the specified character (here: `&`) |
+
 ## Vim resources
 
 * Vim tips and tricks: <https://www.cs.oberlin.edu/~kuperman/help/vim/home.html>
