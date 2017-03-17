@@ -40,7 +40,14 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
 ## Substitution
 
 - Always use `$(cmd)` for command substitution (as opposed to backquotes)
+- Prepend a command with `\` to override alias/builtin lookup. E.g.:
 
+    ```
+    $ \time bash -c "dnf list installed | wc -l"
+    5466
+    1.32user 0.12system 0:01.45elapsed 99%CPU (0avgtext+0avgdata 97596maxresident)k
+    0inputs+136outputs (0major+37743minor)pagefaults 0swaps
+    ```
 
 ## Functions
 
