@@ -98,9 +98,11 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 ## Resources
 
 - Armstrong, Paul (s.d.). *Shell Style Guide.* <https://google.github.io/styleguide/shell.xml>
-- BashFAQ <http://mywiki.wooledge.org/BashFAQ>
+- BashFAQ <http://mywiki.wooledge.org/BashFAQ>, BashGuide <http://mywiki.wooledge.org/BashGuide>
+- Bash Hackers Wiki. <http://wiki.bash-hackers.org/start>
 - Bentz, Yoann (2016). *Good practices for writing shell scripts.* <http://www.yoone.eu/articles/2-good-practices-for-writing-shell-scripts.html>
 - Berkholz, Donny (2011). *Bash shell-scripting libraries.* <https://dberkholz.com/2011/04/07/bash-shell-scripting-libraries/>
+- Billemont, Maarten (2017). The Bash Guide. <http://guide.bash.academy/>
 - Brady, Pádraig (2008). *Common Shell Script Mistakes.* <http://www.pixelbeat.org/programming/shell_script_mistakes.html>
 - Cooper, Mendel (2014). *The Advanced Bash Scripting Guide (ABS).* <http://www.tldp.org/LDP/abs/html/>
 - Fox, Brian and Ramey, Chet (2009). *bash(1) man page.* <http://linux.die.net/man/1/bash>
@@ -110,6 +112,7 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 - Lavi, Kfir (2012). *Defensive Bash Programming.* <http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming>
 - Maxwell, Aaron (2014). *Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)*. <http://redsymbol.net/articles/unofficial-bash-strict-mode/>
 - Pennarun, Avery (2011). *Insufficiently known POSIX shell features.* <http://apenwarr.ca/log/?m=201102#28>
+- Rousseau, Thibaut (2017). **Shell Scripts Matter.** <https://dev.to/thiht/shell-scripts-matter>
 - Sheppard, Simon (s.d.). *Bash Keyboard Shortcuts.* <http://ss64.com/bash/syntax-keyboard.html>
 
 ### Templates
@@ -119,7 +122,11 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 
 ### Portable shell scripts
 
-- https://wiki.ubuntu.com/DashAsBinSh
-- http://pubs.opengroup.org/onlinepubs/009695399/utilities/contents.html
-- http://sites.harvard.edu/~lib113/reference/unix/portable_scripting.html
-- https://www.gnu.org/software/autoconf/manual/autoconf.html#Portable-Shell
+- <https://wiki.ubuntu.com/DashAsBinSh>
+- <http://pubs.opengroup.org/onlinepubs/009695399/utilities/contents.html>
+- <http://sites.harvard.edu/~lib113/reference/unix/portable_scripting.html>
+- <https://www.gnu.org/software/autoconf/manual/autoconf.html#Portable-Shell>
+
+### Fun
+
+- <https://cmdchallenge.com/>
