@@ -16,17 +16,18 @@ Commands work in normal mode, unless specified explicitly.
 
 ## Movement
 
-| Key         | Action                                             |
-| :---        | :---                                               |
-| `0` `$`     | Begin/end of line                                  |
-| `w` `W`     | start of next word (`W` ignores punctuation)       |
-| `e` `E`     | end of next word (`E` ignores punctuation)         |
-| `b` `B`     | backwards by word (`B` ignores punctuation)        |
-| `(` `)`     | begin of previous/next sentence                    |
-| `{` `}`     | paragraph backward/forward                         |
-| `[[` `]]`   | section backward/forward                           |
-| `a(` `i(`   | select everything inside (), a = including (). †   |
-| `C-o` `C-i` | move to previous/next editing positions (jumplist) |
+| Key          | Action                                             |
+| :---         | :---                                               |
+| `0` / `$`    | Begin/end of line                                  |
+| `w`,  `W`    | start of next word (`W` ignores punctuation)       |
+| `e`,  `E`    | end of next word (`E` ignores punctuation)         |
+| `b`,  `B`    | backwards by word (`B` ignores punctuation)        |
+| `(` / `)`    | begin of previous/next sentence                    |
+| `{` / `}`    | paragraph backward/forward                         |
+| `[[` / `]]`  | section backward/forward                           |
+| `a(`, `i(`   | select everything inside (), a = including (). †   |
+| `C-o`, `C-i` | move to previous/next editing positions (jumplist) |
+| `C-o C-o`    | Go to last edited file, last editing position      |
 
 † Also works with `[` `{` `<` `"` `'`
 
