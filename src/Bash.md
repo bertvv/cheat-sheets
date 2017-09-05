@@ -115,6 +115,8 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 - Rousseau, Thibaut (2017). **Shell Scripts Matter.** <https://dev.to/thiht/shell-scripts-matter>
 - Sheppard, Simon (s.d.). *Bash Keyboard Shortcuts.* <http://ss64.com/bash/syntax-keyboard.html>
 
+- When to use Bash: <https://hackaday.com/2017/07/21/linux-fu-better-bash-scripting/#comment-3793634>
+
 ### Templates
 
 - bash-script-template <https://github.com/ralish/bash-script-template>
