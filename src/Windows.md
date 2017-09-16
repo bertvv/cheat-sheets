@@ -1,6 +1,6 @@
-# Windows 2012 R2 Core Survival Guide
+# Windows Shell Survival Guide
 
-Useful PowerShell commands in Windows 2012 R2 Server Core.
+Useful PowerShell and cmd-shell commands.
 
 ## Basic operations
 
@@ -28,7 +28,7 @@ Useful PowerShell commands in Windows 2012 R2 Server Core.
 | Task                    | Command                                                                          |
 | :---                    | :---                                                                             |
 | List adapters           | `Get-NetAdapter`                                                                 |
-| Get connection profiles | `Get-NetAdapter | Get-NetConnectionProfile`                                      |
+| Get connection profiles | `Get-NetAdapter &#124; Get-NetConnectionProfile`                                      |
 | Get IP addresses        | `Get-NetIPAddress`                                                               |
 | Get routing table       | `Get-NetRoute`                                                                   |
 | DNS servers             | `Get-DnsClientServerAddress`                                                     |
@@ -39,45 +39,46 @@ Useful PowerShell commands in Windows 2012 R2 Server Core.
 
 | Task                      | Command                                                        |
 | :---                      | :---                                                           |
-| List all services         | `Get-Service | Format-Table -autosize`                  |
-| View single SERVICE       | `Get-Service | Where name -eq SERVICE | Format-list` |
+| List all services         | `Get-Service &#124; Format-Table -autosize`                  |
+| View single SERVICE       | `Get-Service &#124; Where name -eq SERVICE | Format-list` |
 | Start SERVICE             | `Start-Service -name SERVICE`                                  |
 | Stop SERVICE              | `Stop-Service -name SERVICE`                                   |
-| All service startup types | `Get-WmiObject win32_service | Format-Table -autosize`    |
-| SERVICE startup type      | `Get-WMIObject Win32_Service | where Name -eq SERVICE`    |
+| All service startup types | `Get-WmiObject win32_service &#124; Format-Table -autosize`    |
+| SERVICE startup type      | `Get-WMIObject Win32_Service &#124; where Name -eq SERVICE`    |
 | Enable SERVICE at boot    | `Set-Service -name SERVICE -StartupType Automatic`             |
 | Disable SERCIE at boot    | `Set-Service -name SERVICE -StartupType Disabled`              |
 
 ## Firewall
 
-| Task               | Command                                                                                   |
-| :---               | :---                                                                                      |
-| Get FW state       | `netsh advfirewall show currentprofile`                                                   |
-| Disable firewall   | `netsh advfirewall set currentprofile state off`                                          |
-| Enable firewall    | `netsh advfirewall set currentprofile state on`                                           |
-| Set default policy | `netsh advfirewall set currentprofile firewallpolicy`                                     |
-|                    | `  blockinboundalways,allowoutbound`                                                      |
-| Get FW rules       | `Get-netfirewallrule | format-table name,displaygroup,action,direction,enabled -autosize` |
-| Allow inbound ping | `netsh advfirewall firewall add rule name="Allow ICMP"`                                   |
-|                    | `  dir=in protocol=ICMPv4 action=allow`                                                   |
-| Allow WinRM HTTPS  | `netsh advfirewall firewall add rule name="Allow WinRM HTTPS"`                            |
-|                    | `  dir=in localport=5986 protocol=TCP action=allow`                                       |
+| Task               | Command                                                                                        |
+| :---               | :---                                                                                           |
+| Get FW state       | `Get-NetFirewallProfile -PolicyStore ActiveStore`                                              |
+| Get FW rules       | `Get-netfirewallrule &#124; format-table name,displaygroup,action,direction,enabled -autosize` |
+| Disable firewall   | `Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False`                         |
+| Enable firewall    | `Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True`                          |
+| Set default policy | `Set-NetFirewallProfile -DefaultInboundAction Block -DefaultOutboundAction Allow `             |
+| Allow inbound ping | `Get-NetFirewallRule -DisplayName "*Echo Request*" &#124; Set-NetFirewallRule -enabled true`   |
+| Allow WinRM HTTPS  | `netsh advfirewall firewall add rule name="Allow WinRM HTTPS"`                                 |
+|                    | `  dir=in localport=5986 protocol=TCP action=allow`                                            |
+| Allow RDP          | `Get-NetFirewallRule -DisplayName "Remote Desktop*" &#124; Set-NetFirewallRule -enabled true`  |
 
 TODO: `netsh` is the "old" way of manipulating firewall settings and may be removed in later Windows versions. There are CmdLets for the same tasks.
 
 ## Miscellaneous
 
-| Task               | Command                                                 |
-| :---               | :---                                                    |
-| Finding files      | `Get-ChildItem -Path c:\ -Filter PATTERN -Recurse`      |
-| Get Registry value | `Get-ItemProperty -Path "HKLM:\PATH\TO\PROP"`           |
-| Set Registry value | `Set-ItemProperty -Path "PATH" -Name NAME -Value VALUE` |
-| SHA-256 checksum   | `Get-FileHash FILE`                                     |
-| MD5 checksum       | `Get-FileHash -Algorithm MD5 FILE`                      |
-|                    | Also works for SHA1, SHA256                             |
-| NetBIOS name resolution | `nbtstat -a NETBIOS_NAME -c`                       |
+| Task                    | Command                                                 |
+| :---                    | :---                                                    |
+| Finding files           | `Get-ChildItem -Path c:\ -Filter PATTERN -Recurse`      |
+| Get Registry value      | `Get-ItemProperty -Path "HKLM:\PATH\TO\PROP"`           |
+| Set Registry value      | `Set-ItemProperty -Path "PATH" -Name NAME -Value VALUE` |
+| SHA-256 checksum        | `Get-FileHash FILE`                                     |
+| MD5 checksum            | `Get-FileHash -Algorithm MD5 FILE`                      |
+|                         | Also works for SHA1, SHA256                             |
+| NetBIOS name resolution | `nbtstat -a NETBIOS_NAME -c`                            |
 
 ## Resources
 
 * Bruce Adamczak, 2014. **Windows 2012 Core Survival Guide**, TechNet Blogs, Retrieved on 2014-08-30 from [http://blogs.technet.com/b/bruce_adamczak/](http://blogs.technet.com/b/bruce_adamczak/)
 * Microsoft, 2014. **Scripting with Windows PowerShell**, TechNet Library, Retrieved on 2014-08-31 from [http://technet.microsoft.com/en-us/library/bb978526.aspx](http://technet.microsoft.com/en-us/library/bb978526.aspx)
+
+Remark: pipe symbol inside tables: use `&#124;`
