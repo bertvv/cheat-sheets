@@ -37,16 +37,16 @@ Useful PowerShell and cmd-shell commands.
 
 ## Services
 
-| Task                      | Command                                                        |
-| :---                      | :---                                                           |
-| List all services         | `Get-Service &#124; Format-Table -autosize`                  |
-| View single SERVICE       | `Get-Service &#124; Where name -eq SERVICE | Format-list` |
-| Start SERVICE             | `Start-Service -name SERVICE`                                  |
-| Stop SERVICE              | `Stop-Service -name SERVICE`                                   |
-| All service startup types | `Get-WmiObject win32_service &#124; Format-Table -autosize`    |
-| SERVICE startup type      | `Get-WMIObject Win32_Service &#124; where Name -eq SERVICE`    |
-| Enable SERVICE at boot    | `Set-Service -name SERVICE -StartupType Automatic`             |
-| Disable SERCIE at boot    | `Set-Service -name SERVICE -StartupType Disabled`              |
+| Task                      | Command                                                            |
+| :---                      | :---                                                               |
+| List all services         | `Get-Service `&#124;` Format-Table -autosize`                      |
+| View single SERVICE       | `Get-Service `&#124;` Where name -eq SERVICE `&#124;` Format-list` |
+| Start SERVICE             | `Start-Service -name SERVICE`                                      |
+| Stop SERVICE              | `Stop-Service -name SERVICE`                                       |
+| All service startup types | `Get-WmiObject win32_service &#124; Format-Table -autosize`        |
+| SERVICE startup type      | `Get-WMIObject Win32_Service &#124; where Name -eq SERVICE`        |
+| Enable SERVICE at boot    | `Set-Service -name SERVICE -StartupType Automatic`                 |
+| Disable SERCIE at boot    | `Set-Service -name SERVICE -StartupType Disabled`                  |
 
 ## Firewall
 
