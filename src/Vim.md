@@ -13,6 +13,7 @@ Commands work in normal mode, unless specified explicitly.
 | `:!CMD`    | Shell command                                                                 |
 | `,t`       | Open file with CommandT                                                       |
 | `C-o`      | (in insert mode) go to normal mode for one commnand and return to insert mode |
+| `C-o C-o`  | Open the last edited file at the last edited position.                        |
 
 ## Movement
 
