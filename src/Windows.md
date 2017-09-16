@@ -64,6 +64,52 @@ Useful PowerShell and cmd-shell commands.
 
 TODO: `netsh` is the "old" way of manipulating firewall settings and may be removed in later Windows versions. There are CmdLets for the same tasks.
 
+## Package management
+
+### Windows
+
+* List installed programs:
+    
+    ```PowerShell
+    Get-ItemProperty
+    HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*
+    | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate
+    | Sort -Property DisplayName
+    | Format-Table -AutoSize
+    ```
+
+* List all store-installed programs:
+    
+    ```PowerShell
+    Get-AppxPackage | Select-Object Name, PackageFullName, Version
+    | Sort -Property Name
+    | Format-Table -AutoSize
+    ```
+    
+* Remove program: `Get-AppxPackage *PACKAGE_PATTERN* | Remove-AppxPackage`
+
+### Chocolatey
+
+* Install Chocolatey
+
+    ```PowerShell
+    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    ```
+
+* Install BoxStarter
+
+    ```PowerShell
+    choco install Boxstarter
+    ```
+
+Useful Chocolatey commands:
+
+| Task                    | Command                             |
+| :---                    | :---                                |
+| List installed packages | `choco list --local-only` (or `-l`) |
+| Install                 | `choco install -y PACKAGE`          |
+
+
 ## Miscellaneous
 
 | Task                    | Command                                                 |
@@ -78,7 +124,8 @@ TODO: `netsh` is the "old" way of manipulating firewall settings and may be remo
 
 ## Resources
 
-* Bruce Adamczak, 2014. **Windows 2012 Core Survival Guide**, TechNet Blogs, Retrieved on 2014-08-30 from [http://blogs.technet.com/b/bruce_adamczak/](http://blogs.technet.com/b/bruce_adamczak/)
-* Microsoft, 2014. **Scripting with Windows PowerShell**, TechNet Library, Retrieved on 2014-08-31 from [http://technet.microsoft.com/en-us/library/bb978526.aspx](http://technet.microsoft.com/en-us/library/bb978526.aspx)
+* Adamczak, B. (2014). **Windows 2012 Core Survival Guide**, TechNet Blogs, Retrieved on 2014-08-30 from [http://blogs.technet.com/b/bruce_adamczak/](http://blogs.technet.com/b/bruce_adamczak/)
+* Frazelle, J. (2017). *Windows for Linux nerds*. Retrieved 2017-09-16 from <https://blog.jessfraz.com/post/windows-for-linux-nerds/>
+* Microsoft (2014). **Scripting with Windows PowerShell**, TechNet Library, Retrieved on 2014-08-31 from [http://technet.microsoft.com/en-us/library/bb978526.aspx](http://technet.microsoft.com/en-us/library/bb978526.aspx)
 
 Remark: pipe symbol inside tables: use `&#124;` (but outside of code blocks!)
