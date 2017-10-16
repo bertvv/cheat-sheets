@@ -1,7 +1,5 @@
 # Enterprise Linux 7 (RedHat, CentOS)
 
-Last Modified: 2015-01-20 16:12:38
-
 Command cheat sheet for EL7. For every action, I try to give the 'canonical' command, as recommended by RedHat. That means using `systemd`, NetworkManager, `journald`, etc.
 
 ## Network configuration
@@ -134,3 +132,4 @@ The `firewalld-cmd` should run with root privileges, do always use `sudo`.
 
 * [Using Firewalls, in *RHEL 7 Security Guide*](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Using_Firewalls.html)
 * [FirewallD, in *Fedora Project Wiki*](https://fedoraproject.org/wiki/FirewallD#Using_firewall-cmd)
+* [Deprecated Linux networking commands and their replacements](https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements/)
