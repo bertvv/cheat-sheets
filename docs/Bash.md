@@ -8,7 +8,7 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
 - The principles of Clean Code apply to Bash as well
 - Always use long parameter notation when available
 
-    ```Bash
+    ```bash
     # Avoid:
     rm -rf "${dir}"
 
@@ -27,7 +27,7 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
     - Local/mutable variables: `${lower_case}`
 - Declare variables with a meaningful name for positional parameters of functions
 
-    ```Bash
+    ```bash
     foo() {
       local first_arg="${1}"
       local second_arg="${2}"
@@ -42,7 +42,7 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
 - Always use `$(cmd)` for command substitution (as opposed to backquotes)
 - Prepend a command with `\` to override alias/builtin lookup. E.g.:
 
-    ```
+    ```ShellSession
     $ \time bash -c "dnf list installed | wc -l"
     5466
     1.32user 0.12system 0:01.45elapsed 99%CPU (0avgtext+0avgdata 97596maxresident)k
@@ -56,7 +56,7 @@ Bash can be hard to read and interpret. Using functions can greatly improve read
 - Apply the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle): a function does one thing.
 - Create functions with a meaningful name for complex tests
 
-    ```Bash
+    ```bash
     # Don't do this
     if [ "$#" -ge "1" ] && [ "$1" = '-h' -o "$1" = '--help' -o "$1" = "-?" ]; then
       usage
