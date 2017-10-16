@@ -7,7 +7,7 @@
 # - DejaVu Sans fonts
 
 # Directory containing source (Markdown) files
-source := src
+source := docs
 
 # Directory containing pdf files
 output := print
