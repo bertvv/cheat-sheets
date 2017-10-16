@@ -80,7 +80,7 @@ Bash can be hard to read and interpret. Using functions can greatly improve read
 
 An idiom for tasks that need to be done before the script ends (e.g. removing temporary files, etc.).
 
-```Bash
+```bash
 function finish {
   # Your cleanup code here
 }
