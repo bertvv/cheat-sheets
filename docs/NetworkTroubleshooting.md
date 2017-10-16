@@ -168,7 +168,7 @@ In the transport layer, we'll check whether the network service is actually runn
 
 Does the firewall allow traffic on the service? `sudo firewall-cmd --list-all`.
 
-```ShellSession
+```console
 $ sudo firewall-cmd --list-all
 [sudo] password for USER:
 public (default, active)
