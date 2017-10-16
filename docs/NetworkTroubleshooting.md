@@ -1,7 +1,6 @@
 ---
 title: 'Troubleshooting a network service'
-name: 'Troubleshooting a network service'
-author: Bert Van Vreckem
+layout: post
 ---
 
 A checklist for troubleshooting a network service running on RHEL/CentOS 7. Basic knowledge of TCP/IP is assumed (addressing, port numbers, main protocols, etc.)

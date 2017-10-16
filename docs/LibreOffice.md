@@ -9,7 +9,7 @@ MS Office documents that use the Calibri and Cambria fonts look horrible in Libr
 1. Install fonts Carlito and Caladea
 
     ```ShellSession
-    $ dnf install google-crosextra-caladea-fonts.noarch \
+    $ sudo dnf install google-crosextra-caladea-fonts.noarch \
         google-crosextra-carlito-fonts.noarch
     ```
 2. In LibreOffice, open Tools > Options > Fonts
