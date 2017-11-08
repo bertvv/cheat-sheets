@@ -2,7 +2,9 @@
 
 ## CLI
 
-- Log in as root: `mysql -uroot -p` (password is prompted)
+- Log in as root: `mysql -u root -p` (password is prompted)
+- Log in as root with password `sekrit`: `mysql -u root -psekrit` (**REMARK**: no space allowed between `-p` and the password)
+- Log in as `user` on another `host`, and use database `mydb`: `mysql -h host -u user -p mydb` (password is prompted)
 
 ## Queries
 
@@ -12,49 +14,46 @@ In the overview below, CAPITALIZED words are part of the SQL syntax, lowercase w
 
 | Task | Query |
 | :--- | :--- |
-| List databases | `SHOW DATABASES` |
-| Change active database | `USE dbname` |
-| Change to the "system" database | `USE mysql` |
-| Show tables in active database | `SHOW TABLES` |
-| Show table properties | `DESCRIBE TABLES` |
+| List databases | `SHOW DATABASES;` |
+| Change active database | `USE dbname;` |
+| Change to the "system" database | `USE mysql;` |
+| Show tables in active database | `SHOW TABLES;` |
+| Show table properties | `DESCRIBE tablename;` |
+| List all users | `SELECT user,host,password FROM mysql.user;` |
+| List databases | `SELECT host,db,user FROM mysql.db;` |
 | Quit | `exit` or `Ctrl-D` |
-
-The following queries are to be performed in the `mysql` database.
-
-| Task | Query |
-| :--- | :--- |
-| List all users | `SELECT user,host,password FROM user` |
-
 
 ## "Longer" queries
 
-Perform the tasks of `mysql_secure_installation`
+The following queries can be used in a shell script.
+
+Perform the tasks of `mysql_secure_installation`, i.e. set database root password and remove test users/database. This assumes that the database root password is **NOT** set.
 
 ```bash
 db_root_password=MovesBoct6
 
-myql --user=root <<_EOF_
-UPDATE mysql.user SET Password=PASSWORD('${db_root_password}') WHERE User='root';
+mysql --user=root <<_EOF_
+UPDATE mysql.user SET password=PASSWORD('${db_root_password}') WHERE user='root';
 DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+DELETE FROM mysql.user WHERE User='root' AND host NOT IN ('localhost', '127.0.0.1', '::1');
 DROP DATABASE IF EXISTS test;
-DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+DELETE FROM mysql.db WHERE db='test' OR db='test\\_%';
 FLUSH PRIVILEGES;
 _EOF_
 ```
 
-Create a database and a user for that database:
+Create a database and a user with all privileges for that database (warning: user/db are first removed if they exist):
 
 ```bash
 db_user=myuser
 db_name=mydb
 db_password=TicJart2
 
-myql --user=root <<_EOF_
-DROP USER ${db_user};
-DROP DATABASE ${db_name};
-CREATE DATABASE IF NOT EXISTS ${db_name};
-GRANT ALL ON ${db_name} TO '${db_user}'@'*' IDENTIFIED BY '${db_password}';
+mysql --user=root --password <<_EOF_
+DROP USER IF EXISTS ${db_user};
+DROP DATABASE IF EXISTS ${db_name};
+CREATE DATABASE ${db_name};
+GRANT ALL ON ${db_name}.* TO '${db_user}'@'%' IDENTIFIED BY PASSWORD('${db_password}');
 FLUSH PRIVILEGES;
 _EOF_
 ```
