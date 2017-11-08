@@ -57,3 +57,12 @@ GRANT ALL ON ${db_name}.* TO '${db_user}'@'%' IDENTIFIED BY PASSWORD('${db_passw
 FLUSH PRIVILEGES;
 _EOF_
 ```
+
+## Backup/restore
+
+Let's say you have a Drupal site that you want to back up/restore. The database is `drupal`.
+
+- Backup: `mysqldump -u root -p drupal > drupal_backup.sql`
+- Restore:
+    - First, ensure that the `drupal` database exists (see above)
+    - `mysql -u root -p drupal < drupal_backup.sql`
