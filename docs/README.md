@@ -24,6 +24,7 @@ Anyway, I hope you find some inspiration here, or maybe learn something new.
 - [Git](Git.md)
 - [LibreOffice](LibreOffice.md)
 - [Makefiles](Makefile.md)
+- [MySQL/MariaDB](docs/MySQL-MariaDB.md)
 - [Troubleshooting Network Services in Linux](NetworkTroubleshooting.md)
 - [R statistical programming](R.md)
 - [Basic Statistics in R/LibreOffice Calc/Excel](Statistics.md)
