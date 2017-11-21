@@ -131,3 +131,4 @@ Some text or \markup.
 
 * Vim tips and tricks: <https://www.cs.oberlin.edu/~kuperman/help/vim/home.html>
 * Movements: <https://github.com/LevelbossMike/vim_shortcut_wallpaper>
+* Langworth, I. (2017). *Vim After 15 Years.* Retrieved 2017-11-15 from <https://statico.github.io/vim3.html>
