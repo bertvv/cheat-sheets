@@ -108,6 +108,7 @@ Useful Chocolatey commands:
 | :---                    | :---                                |
 | List installed packages | `choco list --local-only` (or `-l`) |
 | Install                 | `choco install -y PACKAGE`          |
+| Upgrade installed pkgs  | `choco upgrade -y all`              |
 
 
 ## Miscellaneous
