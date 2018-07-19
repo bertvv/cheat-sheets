@@ -47,8 +47,8 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
 - Variables should always be referred to in the `${var}` form (as opposed to `$var`.
 - Variables should always be quoted, especially if their value may contain a whitespace or separator character: `"${var}"`
 - Capitalization:
-    - Readonly/environment variables: `${ALL_CAPS}`
-    - Local/mutable variables: `${lower_case}`
+    - Environment (exported) variables: `${ALL_CAPS}`
+    - Local variables: `${lower_case}`
 - Positional parameters of the script should be checked, those of functions should not
 - Some loops happen in subprocesses, so don’t be surprised when setting variabless does nothing after them. Use stdout and `grep`ing to communicate status.
 
