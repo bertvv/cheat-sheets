@@ -122,14 +122,14 @@ Bash can be hard to read and interpret. Using functions can greatly improve read
 
     ```bash
     # Don't do this
-    if [ "$#" -ge "1" ] && [ "$1" = '-h' -o "$1" = '--help' -o "$1" = "-?" ]; then
+    if [ "$#" -ge "1" ] && [ "$1" = '-h' ] || [ "$1" = '--help' ] || [ "$1" = "-?" ]; then
       usage
       exit 0
     fi
 
     # Do this
     help_wanted() {
-      [ "$#" -ge "1" ] && [ "$1" = '-h' -o "$1" = '--help' -o "$1" = "-?" ]
+      [ "$#" -ge "1" ] && [ "$1" = '-h' ] || [ "$1" = '--help' ] || [ "$1" = "-?" ]
     }
 
     if help_wanted "$@"; then
