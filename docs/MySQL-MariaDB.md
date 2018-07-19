@@ -14,7 +14,7 @@
     mysql -u root -psekrit
     ```
 
-- Log in as `user` on another `host`i, and use database `mydb` (password is prompted):
+- Log in as `user` on another `host`, and use database `mydb` (password is prompted):
 
     ```
     mysql -h host -u user -p mydb
