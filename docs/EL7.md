@@ -133,3 +133,29 @@ The `firewalld-cmd` should run with root privileges, do always use `sudo`.
 * [Using Firewalls, in *RHEL 7 Security Guide*](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Using_Firewalls.html)
 * [FirewallD, in *Fedora Project Wiki*](https://fedoraproject.org/wiki/FirewallD#Using_firewall-cmd)
 * [Deprecated Linux networking commands and their replacements](https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements/)
+
+## Managing SELinux
+
+| Action                                           | Command                                |                    
+| :---                                             | :---                                   |  
+| Verify SELinux status                            | `sestatus`                             |
+| SELinux mode                                     | `getenforce`                           |                         
+| Change to enforcing mode                         | `setenforce 1`                         |                          
+| Change to permissive mode                        | `setenforce 0`                         |                          
+| Set individual domain permissive                 | `semanage permissive -a httpd_t`       |             
+| Mappings between SELinux and Linux user accounts | `semanage login -l`                    |
+| SELinux context of files                         | `ls -Z /var/www/html/test.php`         |    
+| SELinux context of processes                     | `ps -eZ`                               |                          
+| SELinux context associated with your user        | `id -Z`                                |                 
+| Show all booleans                                | `getsebool -a`                         |
+| Turn off boolean                                 | `setsebool [boolean] 0`                |
+| Turn on boolean                                  | `setsebool [boolean] 1`                |
+| Make boolean permanent                           | `setsebool -P [boolean] [0|1]`         |
+| Change SELinux context for a desired folder      | `chcon -t httpd_sys_content_t /var/www/html/index.html` |
+| Resets the original context of a directory       | `restorecon -vR /var/www/html/`        |
+|                                                  |                                        |
+
+
+### Resources
+
+* [SELINUX USER'S AND ADMINISTRATOR'S GUIDE](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7-beta/html/selinux_users_and_administrators_guide/index)
