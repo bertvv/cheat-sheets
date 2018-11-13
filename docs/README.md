@@ -13,7 +13,7 @@ Some recommendations to build a cheat sheet:
 * Print out a new version, **mark** items that you still have difficulty to remember.
 * On the printed sheet, also keep a list of things that you find **difficult**, don't work well, frustrate you. When you have some time, you can look for a solution and add it to the cheat sheet.
 
-Anyway, I hope you find some inspiration here, or maybe learn something new.
+Anyway, I hope you find some inspiration here, or maybe learn something new!
 
 ## Contents
 
