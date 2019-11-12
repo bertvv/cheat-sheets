@@ -188,6 +188,7 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 
 ## Resources
 
+- Araps, Dylan (2018). *Pure Bash Bible.* <https://github.com/dylanaraps/pure-bash-bible>
 - Armstrong, Paul (s.d.). *Shell Style Guide.* <https://google.github.io/styleguide/shell.xml>
 - BashFAQ <http://mywiki.wooledge.org/BashFAQ>, BashGuide <http://mywiki.wooledge.org/BashGuide>
 - Bash Hackers Wiki. <http://wiki.bash-hackers.org/start>
