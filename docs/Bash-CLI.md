@@ -10,7 +10,7 @@ You can find complete lists of Bash shortcuts elsewhere. I only write down those
 | `Ctrl-U` | Delete from cursor to beginning of line                      |
 | `Meta-*` | Insert all possible command line completions                 |
 
-## Bang!
+**Bang!
 
 | Command |                                   |
 | :---    | :---                              |
@@ -22,7 +22,7 @@ You can find complete lists of Bash shortcuts elsewhere. I only write down those
 
 The file `~/.inputrc`, if it exists, controls the behaviour of `GNU readline` and affects many interactive programs, e.g. Bash, Python shell, etc. An example configuration:
 
-```
+```bash
 # /etc/inputrc
 "\C-p":history-search-backward
 "\C-n":history-search-forward
@@ -36,3 +36,6 @@ set show-all-if-unmodified On
 set visible-stats On
 ```
 
+## Resources
+
+- Levy, J. (2019) *The Art of Command Line.* Retrieved 2020-04-14 from <https://github.com/jlevy/the-art-of-command-line>
