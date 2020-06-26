@@ -211,7 +211,7 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 - Pennarun, Avery (2011). *Insufficiently known POSIX shell features.* <http://apenwarr.ca/log/?m=201102#28>
 - Rousseau, Thibaut (2017). **Shell Scripts Matter.** <https://dev.to/thiht/shell-scripts-matter>
 - Sheppard, Simon (s.d.). *Bash Keyboard Shortcuts.* <http://ss64.com/bash/syntax-keyboard.html>
-
+- Woodruff, William (2020). *Anybody can write good bash (with a little effort).* <https://blog.yossarian.net/2020/01/23/Anybody-can-write-good-bash-with-a-little-effort>
 - When to use Bash: <https://hackaday.com/2017/07/21/linux-fu-better-bash-scripting/#comment-3793634>
 
 ### Templates
