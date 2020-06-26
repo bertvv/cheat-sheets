@@ -39,3 +39,4 @@ set visible-stats On
 ## Resources
 
 - Levy, J. (2019) *The Art of Command Line.* Retrieved 2020-04-14 from <https://github.com/jlevy/the-art-of-command-line>
+- Rouberol, B. (2020-04-24) *Shell productivity tips and tricks.* Retrieved 2020-06-26 from <https://blog.balthazar-rouberol.com/shell-productivity-tips-and-tricks>
