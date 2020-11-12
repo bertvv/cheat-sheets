@@ -46,13 +46,13 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
 
 - Prefer local variables within functions over global variables
 - If you need global variables, make them readonly
-- Variables should always be referred to in the `${var}` form (as opposed to `$var`.
+- Variables should always be referred to in the `${var}` form (as opposed to `$var`).
 - Variables should always be quoted, especially if their value may contain a whitespace or separator character: `"${var}"`
 - Capitalization:
     - Environment (exported) variables: `${ALL_CAPS}`
     - Local variables: `${lower_case}`
 - Positional parameters of the script should be checked, those of functions should not
-- Some loops happen in subprocesses, so don’t be surprised when setting variabless does nothing after them. Use stdout and `grep`ing to communicate status.
+- Some loops happen in subprocesses, so don’t be surprised when setting variables does nothing after them. Use stdout and `grep`ing to communicate status.
 
 ## Substitution
 
@@ -162,7 +162,7 @@ Bash is not very easy to debug. There's no built-in debugger like you have with 
 
 - Always check for syntax errors by running the script with `bash -n myscript.sh`
 - Use [ShellCheck](https://www.shellcheck.net/) and fix all warnings. This is a static code analyzer that can find a lot of common bugs in shell scripts. Integrate ShellCheck in your text editor (e.g. Syntastic plugin in Vim)
-- Abort the script on errors and undbound variables. Put the following code at the beginning of each script.
+- Abort the script on errors and unbound variables. Put the following code at the beginning of each script.
 
     ```bash
     set -o errexit   # abort on nonzero exitstatus
