@@ -1,0 +1,11 @@
+---
+
+# Expect indent of 4 spaces (Github default)
+MD007:
+  indent: 4
+
+# Ignore long lines
+MD013: false
+
+# Don't expect commands in fenced code block to have output.
+MD014: false

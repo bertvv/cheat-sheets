@@ -14,6 +14,7 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
     # Good:
     rm --recursive --force -- "${dir}"
     ```
+
 - Don't use:
 
     ```bash
@@ -38,6 +39,7 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
     [...]
     popd
     ```
+
 - Use `nohup foo | cat &` if `foo` must be started from a terminal and run in the background.
 
 ## Variables
@@ -118,6 +120,7 @@ Bash can be hard to read and interpret. Using functions can greatly improve read
       [...]
     }
     ```
+
 - Create functions with a meaningful name for complex tests
 
     ```bash
@@ -188,8 +191,8 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 
 ## Resources
 
+- Araps, Dylan (2018). *Pure Bash Bible.* <https://github.com/dylanaraps/pure-bash-bible>
 - Armstrong, Paul (s.d.). *Shell Style Guide.* <https://google.github.io/styleguide/shell.xml>
-- BashFAQ <http://mywiki.wooledge.org/BashFAQ>, BashGuide <http://mywiki.wooledge.org/BashGuide>
 - Bash Hackers Wiki. <http://wiki.bash-hackers.org/start>
 - Bentz, Yoann (2016). *Good practices for writing shell scripts.* <http://www.yoone.eu/articles/2-good-practices-for-writing-shell-scripts.html>
 - Berkholz, Donny (2011). *Bash shell-scripting libraries.* <https://dberkholz.com/2011/04/07/bash-shell-scripting-libraries/>
@@ -199,13 +202,16 @@ For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
 - Fox, Brian and Ramey, Chet (2009). *bash(1) man page.* <http://linux.die.net/man/1/bash>
 - Free Software Foundation (2014). *Bash Reference Manual.* <https://www.gnu.org/software/bash/manual/bashref.html>
 - Gite, Vivek (2010). *Linux Shell Scripting Tutorial (LSST) v2.0.* <https://bash.cyberciti.biz/guide/>
+- GreyCat (Ed.) (2015). *Bash Guide.* <http://mywiki.wooledge.org/BashGuide>
+- GreyCat (Ed.) (2017). *Bash Frequently Asked Questions.* <https://mywiki.wooledge.org/BashFAQ>
+- GreyCat (Ed.) (2020). *Bash Pitfalls.* <https://mywiki.wooledge.org/BashPitfalls>
 - Jones, M. Tim (2011). *Evolution of shells in Linux: From Bourne to Bash and beyond.* <https://www.ibm.com/developerworks/library/l-linux-shells/>
 - Lavi, Kfir (2012). *Defensive Bash Programming.* <http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming>
 - Maxwell, Aaron (2014). *Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)*. <http://redsymbol.net/articles/unofficial-bash-strict-mode/>
 - Pennarun, Avery (2011). *Insufficiently known POSIX shell features.* <http://apenwarr.ca/log/?m=201102#28>
 - Rousseau, Thibaut (2017). **Shell Scripts Matter.** <https://dev.to/thiht/shell-scripts-matter>
 - Sheppard, Simon (s.d.). *Bash Keyboard Shortcuts.* <http://ss64.com/bash/syntax-keyboard.html>
-
+- Woodruff, William (2020). *Anybody can write good bash (with a little effort).* <https://blog.yossarian.net/2020/01/23/Anybody-can-write-good-bash-with-a-little-effort>
 - When to use Bash: <https://hackaday.com/2017/07/21/linux-fu-better-bash-scripting/#comment-3793634>
 
 ### Templates
