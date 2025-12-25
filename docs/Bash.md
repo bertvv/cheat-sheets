@@ -187,7 +187,7 @@ Bash is not very easy to debug. There's no built-in debugger like you have with 
 
 An annotated template for Bash shell scripts:
 
-For now, see <https://github.com/bertvv/dotfiles/blob/master/.vim/templates/sh>
+For now, see <https://github.com/bertvv/dotfiles/blob/main/vim/.vim/templates/sh>
 
 ## Resources
 
