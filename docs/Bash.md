@@ -52,7 +52,7 @@ An attempt to bring order in good advice on writing Bash scripts I collected fro
     - Environment (exported) variables: `${ALL_CAPS}`
     - Local variables: `${lower_case}`
 - Positional parameters of the script should be checked, those of functions should not
-- Some loops happen in subprocesses, so don’t be surprised when setting variabless does nothing after them. Use stdout and `grep`ing to communicate status.
+- Some loops happen in subprocesses, so don’t be surprised when setting variables does nothing after them. Use stdout and `grep`ing to communicate status.
 
 ## Substitution
 
